@@ -1,0 +1,19 @@
+{
+  "name": "blockchainsecurity",
+  "version": "1.0.0",
+  "description": "Cryptoeconomic eclipse-attack oracle simulation with Foundry and React",
+  "scripts": {
+    "deploy:local": "./scripts/deploy_frontend.sh",
+    "frontend:dev": "npm --prefix frontend run dev",
+    "frontend:build": "npm --prefix frontend run build",
+    "frontend:lint": "npm --prefix frontend run lint"
+  },
+  "keywords": [],
+  "author": "Jayendra Singh",
+  "license": "MIT",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^6.1.2",
+    "ethers": "^6.16.0",
+    "hardhat": "^2.28.6"
+  }
+}
