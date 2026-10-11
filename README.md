@@ -2,6 +2,8 @@
 
 **Author: Jayendra Singh**
 
+[![ci](https://github.com/Jayendra70/Blockchain_Project/actions/workflows/ci.yml/badge.svg)](https://github.com/Jayendra70/Blockchain_Project/actions/workflows/ci.yml)
+
 **A full-stack blockchain security simulation showing how application-layer cryptoeconomics can neutralize oracle eclipse attacks.**
 
 ![Ethereum Blockchain](https://img.shields.io/badge/Blockchain-Ethereum-3C3C3D?style=for-the-badge&logo=Ethereum&logoColor=white)
@@ -16,7 +18,7 @@ This repository demonstrates a practical answer to a hard blockchain security qu
 
 > Can a network-layer eclipse attack be made economically irrational at the application layer?
 
-This project shows that the answer can be yes.
+This project shows that the answer can be yes. It builds on the attack described in Heilman, Kendler, Zohar and Goldberg, [*Eclipse Attacks on Bitcoin's Peer-to-Peer Network*](https://www.usenix.org/conference/usenixsecurity15/technical-sessions/presentation/heilman) (USENIX Security 2015).
 
 The repo contains:
 
@@ -114,8 +116,8 @@ The advanced oracle introduces economic and statistical defenses:
 ### Clone
 
 ```bash
-git clone https://github.com/Jayendra70/Blockchain_project.git
-cd Blockchain_project
+git clone https://github.com/Jayendra70/Blockchain_Project.git
+cd Blockchain_Project
 ```
 
 ### Install frontend dependencies
@@ -171,6 +173,8 @@ The Solidity test suite exercises the main security properties:
   Honest reveals can still finalize the round when quorum is met.
 - `test_AdvancedOracle_ConstructorRejectsInvalidQuorum`
   Invalid quorum settings are rejected at deployment.
+- `test_AdvancedOracle_AccessControl_Burn`
+  Only the authorized oracle contract can burn staked tokens.
 - `test_AdvancedOracle_ReportsRoundState`
   Frontend-friendly round state helpers report the expected protocol state.
 
@@ -222,17 +226,15 @@ Try these scenarios in the `Advanced Oracle` view:
 ├── ARCHITECTURE.md
 ├── IMPROVEMENTS.md
 ├── Project_Report.md
-├── VideoScript.md
 └── README.md
 ```
 
-## Validation Notes
+## Validation
 
-- The Solidity contracts compile successfully with `solc`.
-- The frontend source passes a JSX transpile sanity check.
-- Full local `forge test`, `vite build`, and `eslint` execution depend on having the corresponding tools installed in the target environment.
-
+- `forge test`: 7 passed, 0 failed (Foundry 1.5.1, solc 0.8.33 with via-IR).
+- Frontend: `npm run lint` passes and `npm run build` succeeds.
+- CI runs both on every push (badge at the top).
 
 ## 🎥 Video Presentation & Proof of Concept
-**[🔗 Watch the Full Video Presentation Here]
-https://drive.google.com/file/d/1yyiw6C3MnVbg3HWWm-7omivlklMCxkIt/view?usp=share_link
+
+[🔗 Watch the full video presentation](https://drive.google.com/file/d/1yyiw6C3MnVbg3HWWm-7omivlklMCxkIt/view?usp=share_link)
