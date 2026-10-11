@@ -1,0 +1,12 @@
+# Foundry build output (foundry.toml sets out = "artifacts")
+artifacts/
+cache/
+broadcast/
+out/
+
+# Node
+node_modules/
+
+# Environment and OS files
+.env
+.DS_Store
